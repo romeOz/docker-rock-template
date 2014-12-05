@@ -20,13 +20,22 @@ Used Vagrant + Ansible.
  
 > To run all services marked `option` you should to uncomment them in the file [main.yml](https://github.com/romeOz/vagrant-rock-template/blob/master/provisioning/main.yml).
 
-Installation
+See Demo (one of three ways)
 -------------------
 
-1. ```git clone https://github.com/romeOz/vagrant-rock-template.git```
-2. [Install Vagrant](https://www.vagrantup.com/downloads), and additional Vagrant plugins ```vagrant plugin install vagrant-hostsupdater vagrant-vbguest vagrant-cachier```
-3. ```vagrant up```
-4. Open demo [http://rock.tpl/](http://rock.tpl/) or [http://192.168.33.34/](http://192.168.33.34/)
+####1. [Destination](http://demo.template.framerock.net/)
+
+####2. Docker + Ansible
+
+ * `docker run -d -p 8080:80 romeoz/vagrant-rock-template`
+ * Open demo [http://localhost:8080/](http://localhost:8080/)
+ 
+####3. Vagrant + Ansible
+
+ * `git clone https://github.com/romeOz/vagrant-rock-template.git`
+ * [Install Vagrant](https://www.vagrantup.com/downloads), and additional Vagrant plugins `vagrant plugin install vagrant-hostsupdater vagrant-vbguest vagrant-cachier`
+ * `vagrant up`
+ * Open demo [http://rock.tpl/](http://rock.tpl/) or [http://192.168.33.34/](http://192.168.33.34/)
 
 > Work/editing the project can be done via ssh:
 
