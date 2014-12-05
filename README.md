@@ -29,6 +29,7 @@ Installation
 4. Open demo [http://rock.tpl/](http://rock.tpl/) or [http://192.168.33.34/](http://192.168.33.34/)
 
 > Work/editing the project can be done via ssh:
+
 ```bash
 vagrant ssh
 cd /var/www/rock-template
