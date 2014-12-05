@@ -1,5 +1,7 @@
-Demo for ["Rock template"](https://github.com/romeOz/rock-template) using Vagrant + Ansible
+Demo for ["Rock template"](https://github.com/romeOz/rock-template)
 ====================
+
+Used Vagrant + Ansible.
 
 ###Out of the box:
 
