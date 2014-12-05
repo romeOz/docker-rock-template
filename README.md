@@ -17,7 +17,6 @@ Used Vagrant + Ansible.
     * Couchbase 3.0.0 + pecl couchbase-1.2.2 **(option)**
     * Redis 2.8 + php5-redis **(option)**
  * Local IP loop on Host machine /etc/hosts and Virtual hosts in Nginx already set up!
-
 > To run all services marked `option` you should to uncomment them in the file [main.yml](https://github.com/romeOz/vagrant-rock-template/blob/master/provisioning/main.yml).
 
 Installation
