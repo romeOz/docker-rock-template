@@ -1,7 +1,7 @@
-Demo for ["Rock template"](https://github.com/romeOz/rock-template) 
+Demo for ["Rock template"](https://github.com/romeOz/rock-template) using Vagrant + Ansible
 ====================
 
-Out of the box:
+###Out of the box:
 
  * Ubuntu 14.04 64 bit
 
