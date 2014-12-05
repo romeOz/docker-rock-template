@@ -34,6 +34,12 @@ vagrant ssh
 cd /var/www/rock-template
 ```
 
+Changelog "Rock template"
+-------------------
+ * [Release 0.9.2](https://github.com/romeOz/rock-template/releases/tag/0.9.2)
+ * [Release 0.9.1](https://github.com/romeOz/rock-template/releases/tag/0.9.1)
+ * [Release 0.9.0](https://github.com/romeOz/rock-template/releases/tag/0.9.0)
+
 License
 -------------------
 
