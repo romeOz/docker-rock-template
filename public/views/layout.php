@@ -13,17 +13,23 @@ $list = [
         'email' => 'chuck@site.com'
     ]
 ];
-
+$countList = count($list);
 $currentPage = isset($_GET['num']) ? (int)$_GET['num'] : null;
+
+if (empty($currentPage)) {
+    unset($list[1]);
+} else {
+    unset($list[$currentPage-1]);
+}
 
 $params = [
     'array' => $list,
     'tpl' => '@demo.views/chunks/item',
     'wrapperTpl' => '@INLINE<div>[[!+output]]</div>',
     'pagination' => [
-        'array' => \rock\helpers\Pagination::get(count($list), $currentPage, 1, SORT_DESC),
-        'pageVar' => 'num',
-        'pageAnchor' => 'pagination'
+        'array' => \rock\helpers\Pagination::get($countList, $currentPage, 1, SORT_DESC),
+        'pageArgUrl' => 'num',
+        'url'  =>  ["class" =>  \rock\url\Url::className(), 'fragment' => 'pagination']
     ]
 ];
 
@@ -73,7 +79,7 @@ $params = [
     'wrapperTpl' => '@INLINE&lt;div&gt;[[!+output]]&lt;/div&gt;',
     'pagination' => [
         'array' => $this->pagination,
-        'pageVar' => 'num',
+        'pageArgUrl' => 'num',
     ]
 ];
 ?&gt;

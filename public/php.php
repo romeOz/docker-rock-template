@@ -1,11 +1,15 @@
 <?php
 use rock\template\Template;
 
-include_once(__DIR__ . '/vendor/autoload.php');
+if (version_compare(PHP_VERSION, '5.4.0', '<')) {
+    die('need to use PHP version 5.4.x or greater');
+}
+
+require(dirname(__DIR__) . '/vendor/autoload.php');
 
 
-Template::setAlias('@runtime', __DIR__ . '/runtime');
-Template::setAlias('@demo.views', __DIR__ . '/views');
+\rock\base\Alias::setAlias('@runtime', __DIR__ . '/runtime');
+\rock\base\Alias::setAlias('@demo.views', __DIR__ . '/views');
 
 $template = new Template();
 // registration meta
@@ -22,7 +26,6 @@ $template->registerMetaTag(
     [
         'name' => 'description',
         'content' => 'php engine',
-
     ],
     'description'
 );

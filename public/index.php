@@ -2,11 +2,15 @@
 use rock\helpers\Pagination;
 use rock\template\Template;
 
-include_once(__DIR__ . '/vendor/autoload.php');
+if (version_compare(PHP_VERSION, '5.4.0', '<')) {
+    die('need to use PHP version 5.4.x or greater');
+}
+
+require(dirname(__DIR__) . '/vendor/autoload.php');
 
 
-Template::setAlias('@runtime', __DIR__ . '/runtime');
-Template::setAlias('@demo.views', __DIR__ . '/views');
+\rock\base\Alias::setAlias('@runtime', __DIR__ . '/runtime');
+\rock\base\Alias::setAlias('@demo.views', __DIR__ . '/views');
 
 
 $config = [
@@ -51,7 +55,15 @@ $list = [
         'email' => 'chuck@site.com'
     ]
 ];
+$countList = count($list);
 $currentPage = isset($_GET['num']) ? (int)$_GET['num'] : null;
+
+if (empty($currentPage)) {
+    unset($list[1]);
+} else {
+    unset($list[$currentPage-1]);
+}
+
 echo $template->render(
     '@demo.views/layout',
     [
@@ -63,7 +75,7 @@ echo $template->render(
                 'num' => 3,
                 'title' => 'Hello world',
                 'list' => $list,
-                'pagination' =>  Pagination::get(count($list), $currentPage, 1, SORT_DESC)
+                'pagination' =>  Pagination::get($countList, $currentPage, 1, SORT_DESC)
             ]
     ]
 );

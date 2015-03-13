@@ -86,7 +86,7 @@ $replace =
     ?wrapperTpl = `@INLINE&lt;div&gt;[[!+output]]&lt;/div&gt;`
     ?pagination=`{
         "array" : [[!+pagination:toJson]],
-        "pageVar" : "num"
+        "pageArgUrl" : "num"
     }`
 ]]!}';
 $list = [
@@ -116,8 +116,8 @@ echo (new Template())->replace($replace, $params);<!--
                     ?wrapperTpl = `@INLINE<div>[[!+output]]</div>`
                     ?pagination=`{
                         "array" : [[!+demo.pagination:toJson]],
-                        "pageVar" : "num",
-                        "pageAnchor" : "pagination"
+                        "pageArgUrl" : "num",
+                        "url" : {"class": "\\rock\\url\\Url", "fragment": "pagination"}
                     }`
                 ]]<!--
                         --></code></pre>
@@ -166,7 +166,7 @@ echo (new FooController)->actionIndex();<!--
     ?wrapperTpl = `@INLINE&lt;div&gt;[[!+output]]&lt;/div&gt;`
     ?pagination=`{
        "call" : "context.getPagination",
-       "pageVar" : "num"
+       "pageArgUrl" : "num"
     }`
 ]]!}<!--
                         --></code></pre>

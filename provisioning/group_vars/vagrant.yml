@@ -1,4 +1,4 @@
-rootFolder: '/var/www/rock-template'
+root_dir: '/var/www/rock-template'
 
 username: vagrant
 hostname: rock
@@ -13,5 +13,5 @@ php_post_max_size: 25M
 
 vhosts:
   [
-    { name: 'rock.tpl', rootFolder: '/var/www/rock-template'}
+    { name: 'rock-template', webroot_dir: '/var/www/rock-template/public'}
   ]

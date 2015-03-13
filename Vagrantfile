@@ -43,7 +43,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # the path on the host to the actual folder. The second argument is
     # the path on the guest to mount the folder. And the optional third
     # argument is a set of non-required options.
-    config.vm.synced_folder "./", "/var/tmp"
+    config.vm.synced_folder "./", "/var/www/rock-template"
 
     # Provider-specific configuration so you can fine-tune various
     # backing providers for Vagrant. These expose provider-specific options.
@@ -68,9 +68,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # https://github.com/cogitatio/vagrant-hostsupdater
     if Vagrant.has_plugin?("vagrant-hostsupdater")
         config.hostsupdater.remove_on_suspend = true
-        config.vm.hostname = "rock.tpl"
-        config.hostsupdater.aliases = ["www.rock.tpl"]
-    #    config.hostsupdater.aliases = ["admin.rock.tpl","phpmyadmin.rock.tpl","adminer.rock.tpl"]
+        config.vm.hostname = "rock-template"
+        config.hostsupdater.aliases = ["www.rock-template"]
     end
 
     if Vagrant.has_plugin?("vagrant-cachier")
