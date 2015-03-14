@@ -20,7 +20,7 @@ ADD ./ /var/www/rock-template/
 WORKDIR /var/www/rock-template/
 
 # Install ansible-playbook
-RUN ansible-playbook -v provisioning/docker.yml --inventory-file=provisioning/hosts -c local
+RUN ansible-playbook -v provisioning/docker.yml -i 'docker,' -c local
 
 # Append "daemon off;" to the beginning of the configuration
 #RUN echo "daemon off;" >> /etc/nginx/nginx.conf
