@@ -28,5 +28,3 @@
   with_items: vhosts
   notify:
     - restart nginx
-
-
