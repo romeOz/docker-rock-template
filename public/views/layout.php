@@ -28,7 +28,7 @@ $params = [
     'wrapperTpl' => '@INLINE<div>[[!+output]]</div>',
     'pagination' => [
         'array' => \rock\helpers\Pagination::get($countList, $currentPage, 1, SORT_DESC),
-        'pageArgUrl' => 'num',
+        'pageParam' => 'num',
         'url'  =>  ["class" =>  \rock\url\Url::className(), 'fragment' => 'pagination']
     ]
 ];
@@ -79,7 +79,7 @@ $params = [
     'wrapperTpl' => '@INLINE&lt;div&gt;[[!+output]]&lt;/div&gt;',
     'pagination' => [
         'array' => $this->pagination,
-        'pageArgUrl' => 'num',
+        'pageParam' => 'num',
     ]
 ];
 ?&gt;
