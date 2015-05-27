@@ -29,6 +29,7 @@ cd /var/www/rock-template
 
 Changelog "Rock template"
 -------------------
+ * [Release 0.10.4](https://github.com/romeOz/rock-template/releases/tag/0.10.4)
  * [Release 0.10.2](https://github.com/romeOz/rock-template/releases/tag/0.10.2)
  * [Release 0.10.0](https://github.com/romeOz/rock-template/releases/tag/0.10.0)
  * [Release 0.9.3](https://github.com/romeOz/rock-template/releases/tag/0.9.3)

@@ -45,7 +45,7 @@ $params = [
             Snippets
         </div>
         <div class="demo-post-meta">
-            ListView + Pagination
+            listView + Pagination
         </div>
         Contents index.php:
         <pre><code class="php"><!--
@@ -83,10 +83,10 @@ $params = [
     ]
 ];
 ?&gt;
-&lt;?=$this->getSnippet('ListView', $params)?&gt;<!--
+&lt;?=$this->getSnippet('listView', $params)?&gt;<!--
                 --></code></pre>
         Result<a name="pagination"></a>:
-        <pre><code class="html"><?=$this->getSnippet('ListView', $params)?></code></pre>
+        <pre><code class="html"><?=$this->getSnippet('listView', $params)?></code></pre>
     </div>
 </div>
 <?=$this->getChunk('@demo.views/chunks/footer')?>
