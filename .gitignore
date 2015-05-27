@@ -2,10 +2,10 @@
 ## Project
 ############
 
-vendor
+/vendor
+/configs
 assets/*
 composer.lock
-./index.php
 *~
 
 
