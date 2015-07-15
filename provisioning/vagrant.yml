@@ -13,5 +13,4 @@
     - composer
     - redis
     - memcached
-    - couchbase
     - demo
