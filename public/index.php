@@ -18,7 +18,7 @@ $config = [
         '@demo.views'
     ],
     'head' => "<!DOCTYPE html>\n<html lang=\"en\">",
-    'title' => 'Demo by Rock engine',
+    'title' => 'Rock engine',
     'metaTags' => [
         '<meta charset="UTF-8">',
         '<meta content="width=device-width, initial-scale=1" name="viewport">',

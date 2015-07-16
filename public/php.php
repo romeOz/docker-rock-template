@@ -48,6 +48,6 @@ $template->registerJsFile('/assets/js/demo.min.js');
 echo $template->render(
     '@demo.views/layout.php',
     [
-        'title' => 'Demo by PHP engine',
+        'title' => 'PHP engine',
     ]
 );
