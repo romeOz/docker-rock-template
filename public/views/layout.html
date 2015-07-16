@@ -1,79 +1,61 @@
 [[$@demo.views/chunks/top_menu]]
-<div class="container main" role="main">
-    <div class="demo-header">
-        <h1 class="demo-title">[[+title]]</h1>
-        <p class="lead demo-description">The example template.</p>
-    </div>
-    <div class="demo-main">
-        <div class="demo-post">
-            <div class="demo-post-title">
-                Filters
-            </div>
-            <div class="demo-post-meta">
-            Modify url
-            </div>
+<main class="container main" role="main">
+    <header class="header">
+        <h1 class="title">[[+title]]</h1>
+        <p class="lead description">The example template.</p>
+    </header>
+        <article class="post">
+            <h2>Filters</h2>
+            <h3 class="header">Modify url</h3>
             <pre><code class="php"><!--
--->$replace = '{! [[+url
-                :modifyUrl
-                    &args=`{"page" : 1}`
-                    &beginPath=`/parts`
-                    &endPath=`/news/`
-                    &anchor=`name`
-                    &const=`32`
-]] !}';
+-->$replace =
+    '{! [[+url
+        :modifyUrl
+            &modify=`{"page" : 1, "#" : "name"}`
+            &scheme=`abs`
+    ]] !}';
 echo (new Template())->replace($replace, ['url'=> '/categories/?view=all']);<!--
                     --></code></pre>
-            Result:
+            <div class="post-meta">Result:</div>
             <pre><code class="html"><!--
                         -->[[+demo.url
                     :modifyUrl
-                        &args=`{"page" : 1}`
-                        &beginPath=`/parts`
-                        &endPath=`/news/`
-                        &anchor=`name`
-                        &const=`32`
+                        &modify=`{"page" : 1, "#" : "name"}`
+                        &scheme=`abs`
                 ]]<!--
                         --></code></pre>
-            <div class="demo-post-meta">
-                Modify date
-            </div>
+            <h3 class="header">Modify date</h3>
             <pre><code class="php"><!--
--->$replace = '{![[+date:modifyDate&format=`dmyhm`]]!}';
+-->$replace = '{![[+date:modifyDate&format=`j F Y H:i`]]!}';
 echo (new Template())->replace($replace, ['date'=> '2014-02-12 15:01']);<!--
                     --></code></pre>
-            Result:
+            <div class="post-meta">Result:</div>
             <pre><code class="html"><!--
-                        -->[[+demo.date:modifyDate&format=`dmyhm`]]<!--
+                        -->[[+demo.date:modifyDate&format=`j F Y H:i`]]<!--
                         --></code></pre>
 
-            <div class="demo-post-meta">
-                Arithmetic operators
-            </div>
+            <h3 class="header">Arithmetic operators</h3>
             <pre><code class="php"><!--
                             -->echo (new Template())->replace('{![[+num * `4` + `2`]]!}', ['num'=> 3]);<!--
                          --></code></pre>
-            Result:
+            <div class="post-meta">Result:</div>
             <pre><code class="html"><!--
                         -->[[+demo.num * `4` + `2`]]<!--
                         --></code></pre>
 
-            <div class="demo-post-meta">
-                php-function + cascade
-            </div>
+            <h3 class="header">php-function + cascade</h3>
             <pre><code class="php"><!--
                             -->echo (new Template())->replace('{![[+title:substr&start=`6`&length=`2`:strlen]]!}', ['title'=> 'hello world']);<!--
                          --></code></pre>
-            Result:
+            <div class="post-meta">Result:</div>
             <pre><code class="html"><!--
                         -->[[+demo.title:substr&start=`6`&length=`2`:strlen]]<!--
                         --></code></pre>
-        </div>
+        </article>
 
-        <div class="demo-post">
-            <div class="demo-post-title">Snippets</div>
-            <div class="demo-post-meta">
-                listView + pagination
-            </div>
+        <article class="post">
+            <h2>Snippets</h2>
+            <h3 class="header">listView + pagination</h3>
             <pre><code class="php"><!--
  -->
 // set alias
@@ -117,7 +99,7 @@ echo (new Template())->replace($replace, $params);<!--
                     ?pagination=`{
                         "array" : [[!+demo.pagination:toJson]],
                         "pageParam" : "num",
-                        "url" : {"class": "\\rock\\url\\Url", "fragment": "pagination"}
+                        "url" : {"#": "pagination"}
                     }`
                 ]]<!--
                         --></code></pre>
@@ -170,7 +152,6 @@ echo (new FooController)->actionIndex();<!--
     }`
 ]]!}<!--
                         --></code></pre>
-        </div>
-    </div>
-</div>
+        </article>
+</main>
 [[$@demo.views/chunks/footer]]

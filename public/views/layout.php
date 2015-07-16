@@ -29,24 +29,20 @@ $params = [
     'pagination' => [
         'array' => \rock\helpers\Pagination::get($countList, $currentPage, 1, SORT_DESC),
         'pageParam' => 'num',
-        'url'  =>  ["class" =>  \rock\url\Url::className(), 'fragment' => 'pagination']
+        'url'  =>  ['#' => 'pagination']
     ]
 ];
 
 ?>
 <?=$this->getChunk('@demo.views/chunks/top_menu')?>
-<div class="container main" role="main">
-    <div class="demo-header">
-        <h1 class="demo-title"><?=$this->title?></h1>
-        <p class="lead demo-description">The example template.</p>
-    </div>
-    <div class="demo-main">
-        <div class="demo-post-title">
-            Snippets
-        </div>
-        <div class="demo-post-meta">
-            listView + Pagination
-        </div>
+<main class="container main" role="main">
+    <header class="header">
+        <h1 class="title"><?=$this->title?></h1>
+        <p class="lead description">The example template.</p>
+    </header>
+    <article>
+        <h2>Snippets</h2>
+        <h3 class="header">listView + Pagination</h3>
         Contents index.php:
         <pre><code class="php"><!--
 -->// set alias
@@ -85,8 +81,8 @@ $params = [
 ?&gt;
 &lt;?=$this->getSnippet('listView', $params)?&gt;<!--
                 --></code></pre>
-        Result<a name="pagination"></a>:
+        <a name="pagination"></a><div class="post-meta">Result:</div>
         <pre><code class="html"><?=$this->getSnippet('listView', $params)?></code></pre>
-    </div>
-</div>
+    </article>
+</main>
 <?=$this->getChunk('@demo.views/chunks/footer')?>

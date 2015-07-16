@@ -12,8 +12,12 @@ require(dirname(__DIR__) . '/vendor/autoload.php');
 \rock\base\Alias::setAlias('@demo.views', __DIR__ . '/views');
 
 $template = new Template();
+$template->chroots = [
+    '@template.views',
+    '@demo.views'
+];
 // registration meta
-$template->title = 'Demo by PHP engine';
+$template->title = 'PHP engine';
 $template->head = "<!DOCTYPE html>\n<html lang=\"en\">";
 $template->registerMetaTag(['charset' => 'UTF-8']);
 $template->registerMetaTag(
@@ -38,15 +42,8 @@ $template->registerLinkTag(
     ],
     'favicon'
 );
-$template->registerCssFile('/assets/css/bootstrap.min.css');
-$template->registerCssFile('/assets/css/highlight/github.css');
-$template->registerCssFile('/assets/css/demo.css');
-$template->registerJsFile('/assets/js/jquery.min.js');
-$template->registerJsFile('/assets/js/bootstrap.min.js');
-$template->registerJsFile('/assets/js/highlight.pack.js');
-$template->registerJsFile('/assets/js/demo.js');
-
-$template->addPlaceholder('active.php', true, true);
+$template->registerCssFile('/assets/css/demo.min.css');
+$template->registerJsFile('/assets/js/demo.min.js');
 
 echo $template->render(
     '@demo.views/layout.php',

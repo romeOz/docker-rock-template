@@ -12,8 +12,11 @@ require(dirname(__DIR__) . '/vendor/autoload.php');
 \rock\base\Alias::setAlias('@runtime', __DIR__ . '/runtime');
 \rock\base\Alias::setAlias('@demo.views', __DIR__ . '/views');
 
-
 $config = [
+    'chroots' => [
+        '@template.views',
+        '@demo.views'
+    ],
     'head' => "<!DOCTYPE html>\n<html lang=\"en\">",
     'title' => 'Demo by Rock engine',
     'metaTags' => [
@@ -26,23 +29,17 @@ $config = [
     ],
     'cssFiles' => [
         Template::POS_HEAD => [
-            '<link href="/assets/css/bootstrap.min.css" rel="stylesheet">',
-            '<link href="/assets/css/highlight/github.css" rel="stylesheet">',
-            '<link href="/assets/css/demo.css" rel="stylesheet">'
+            '<link href="/assets/css/demo.min.css" rel="stylesheet">'
         ],
     ],
     'jsFiles' => [
         Template::POS_END => [
-            '<script src="/assets/js/jquery.min.js"></script>',
-            '<script src="/assets/js/bootstrap.min.js"></script>',
-            '<script src="/assets/js/highlight.pack.js"></script>',
-            '<script src="/assets/js/demo.js"></script>',
+            '<script src="/assets/js/demo.min.js"></script>',
         ]
     ],
 ];
 
 $template = new Template($config);
-$template->addPlaceholder('active.rock', true, true);
 
 $list = [
     [
@@ -67,7 +64,7 @@ if (empty($currentPage)) {
 echo $template->render(
     '@demo.views/layout',
     [
-        'title' => 'Demo by Rock engine',
+        'title' => 'Rock engine',
         'demo' =>
             [
                 'url' => '/categories/?view=all',

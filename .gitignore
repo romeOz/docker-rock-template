@@ -4,7 +4,10 @@
 
 vendor/
 configs/
+node_modules/
 composer.lock
+gulpfile.js
+package.json
 *~
 
 ############
