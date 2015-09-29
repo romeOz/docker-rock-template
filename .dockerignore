@@ -1,0 +1,8 @@
+.git
+.gitignore
+src/composer.lock
+src/gulpfile.js
+src/package.json
+src/vendor
+LICENSE
+README.md

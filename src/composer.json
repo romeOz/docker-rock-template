@@ -1,0 +1,27 @@
+{
+  "name": "romeoz/docker-rock-template",
+  "description": "Demo for Rock template engine",
+  "keywords": [
+    "rock",
+    "template engine",
+    "demo"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "support": {
+    "email": "serggalka@gmail.com",
+    "issues": "https://github.com/romeOz/docker-rock-template/issues",
+    "source": "https://github.com/romeOz/docker-rock-template"
+  },
+  "authors": [
+    {
+      "name": "Ruslan",
+      "email": "serggalka@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "romeoz/rock-template": "0.12.*",
+    "romeoz/rock-date": "0.10.*"
+  }
+}
