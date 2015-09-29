@@ -17,7 +17,6 @@ Out of the box
  * Nginx 1.8.0
  * PHP 5.6
  * Composer
-```
 
 License
 -------------------
