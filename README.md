@@ -1,9 +1,6 @@
 Demo for ["Rock template"](https://github.com/romeOz/rock-template)
 ====================
 
-See Demo (one of three ways)
--------------------
-
 Installation
 -------------------
 
