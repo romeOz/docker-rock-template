@@ -8,7 +8,8 @@ ADD ./src/ /var/www/rock-template/
 
 WORKDIR /var/www/rock-template/
 
-RUN composer install --prefer-dist --no-dev
+RUN composer install --prefer-dist --no-dev \
+    && chown www-data:www-data /var/www/rock-template -R
 
 EXPOSE 80
 
